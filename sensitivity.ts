@@ -41,11 +41,9 @@ namespace ExpSense {
                     onExplodeHandler();
                 }
             } else {
-                control.inBackground(function () {
                     if (onExplosiveStateHandler) {
                         onExplosiveStateHandler(xaxis, yaxis, xyzacc);
                     }
-                })
             }
         }
         basic.pause(100)
