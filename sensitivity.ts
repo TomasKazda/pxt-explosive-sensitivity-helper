@@ -35,16 +35,17 @@ namespace ExpSense {
             if (xyzacc > 9) booom = true //shake it, baby
             if (Math.abs(xaxis) > 2 || Math.abs(yaxis) > 2) booom = true //on an inclined surface
 
-            control.inBackground(function () {
-                if (onExplosiveStateHandler) {
-                    onExplosiveStateHandler(xaxis, yaxis, xyzacc);
-                }
-            })
             if (booom && !stop) {
                 stop = true
                 if (onExplodeHandler) {
                     onExplodeHandler();
                 }
+            } else {
+                control.inBackground(function () {
+                    if (onExplosiveStateHandler) {
+                        onExplosiveStateHandler(xaxis, yaxis, xyzacc);
+                    }
+                })
             }
         }
         basic.pause(100)
