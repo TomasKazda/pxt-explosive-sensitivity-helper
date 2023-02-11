@@ -108,22 +108,20 @@ namespace ExpSense {
      * Increase the difficulty level
     **/
     //% blockId=ExpSense_incdiff block="difficulty increase"
-    export function difficultyInc(): number {
+    export function difficultyInc(): void {
         if (stop) {
-            deltamodifier = Math.constrain(deltamodifier + 0.1, 0.8, 2.8)
+            deltamodifier = Math.constrain(deltamodifier - 0.1, 0.8, 2.8)
         }
-        return deltamodifier * 10
     }
 
     /**
     * Reduce the difficulty level
     **/
     //% blockId=ExpSense_decdiff block="difficulty reduce"
-    export function difficultyDec(): number {
+    export function difficultyDec(): void {
         if (stop) {
-            deltamodifier = Math.constrain(deltamodifier - 0.1, 0.8, 2.8)
+            deltamodifier = Math.constrain(deltamodifier + 0.1, 0.8, 2.8)
         }
-        return deltamodifier * 10
     }
 
     /**
